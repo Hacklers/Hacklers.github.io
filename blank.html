@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <h1>GET HACKED</h1>
+        <p id="cooked">
+            PLATFORM: -<br>
+            IP: -
+        </p>
+        <script>
+            var cooked = document.getElementById("cooked")
+
+            async function getIP() {
+                var res = await fetch("https://api.ipify.org?format=json")
+                var data = await res.json()
+                return data.ip
+            }
+
+            getIP().then((ip) => {
+                cooked.innerHTML = `
+                <h1>GET HACKED</h1>
+                <p>
+                    PLATFORM: ${navigator.platform}<br>
+                    IP: ${ip}
+                </p>
+                `
+            })
+        </script>
+    </body>
+</html>

