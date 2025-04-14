@@ -6,7 +6,7 @@
     <body>
         <h1>THIS IS A PRANK!!! DO NOT TAKE THIS SERIOUSLY, NO DATA IS DOWNLOADED OR SOLD. THIS VERSION CAUSES EXTREME LAG. DO NOT RUN UNLESS YOU HAVE NOTHING ELSE OPEN! IT IS NOT MY FAULT IF YOU LOSE DATA!!!!!</h1>
         <button onclick="Start()">Begin</button>
-        <button onclick="closeWindows(); window.close(); clearInterval(interval)">Quit</button>
+        <button onclick="closeWindows(); clearInterval(interval)">Quit</button>
         <script>
         function addWindow(text) {
             var hackedWindow = window.open("", "", "width=400,height=400")
@@ -54,6 +54,7 @@
             newWindows.forEach((element) => {
                 element.close()
             })
+            window.close()
         }
 
         var start = false
