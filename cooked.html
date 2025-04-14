@@ -22,7 +22,10 @@
                 hackedWindow.moveTo(Math.floor(Math.random() * (width - 400)), Math.floor(Math.random() * (height - 400)))
             }, 15)
             
-            hackedWindow.addEventListener("beforeunload", function() {
+            hackedWindow.addEventListener("beforeunload", function stopClose() {
+                const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+                audio.loop = true
+                audio.play()
                 alert("Think you can close me?!")
                 addWindow("Think you can close me?!")
                 addWindow("Think you can close me?!")
@@ -42,6 +45,7 @@
         
         function closeWindows() {
             windows.forEach((element) => {
+                element.removeEventListener("beforeunload", stopClose)
                 element.close()
             })
             newWindows.forEach((element) => {
