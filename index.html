@@ -22,19 +22,22 @@
             setInterval(function() {
                 hackedWindow.moveTo(Math.floor(Math.random() * (width - 400)), Math.floor(Math.random() * (height - 400)))
             }, 15)
-            
-            hackedWindow.addEventListener("beforeunload", function stopClose() {
-                const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
-                audio.loop = true
-                audio.play()
-                alert("Think you can close me?!")
-                addWindow("Think you can close me?!")
-                addWindow("Think you can close me?!")
-                addWindow("<img src='https://i.pinimg.com/736x/72/cf/8e/72cf8eeeaf310f363608fd30367ac635.jpg' width='100%' height='100%'>")
-            })
+
+            hackedWindow.addEventListener("beforeunload", stopClose, false)
             
             return hackedWindow
         }
+
+        function stopClose() {
+            const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+            audio.loop = true
+            audio.play()
+            alert("Think you can close me?!")
+            addWindow("Think you can close me?!")
+            addWindow("Think you can close me?!")
+            addWindow("<img src='https://i.pinimg.com/736x/72/cf/8e/72cf8eeeaf310f363608fd30367ac635.jpg' width='100%' height='100%'>")
+        }
+
         var windows = []
         var newWindows = []
         
@@ -46,7 +49,7 @@
         
         function closeWindows() {
             windows.forEach((element) => {
-                element.removeEventListener("beforeunload", stopClose)
+                element.removeEventListener("beforeunload", stopClose, false)
                 element.close()
             })
             newWindows.forEach((element) => {
