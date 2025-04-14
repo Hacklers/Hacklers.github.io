@@ -49,7 +49,17 @@
                 })
                 windows.push(addWindow(`Platform: ${navigator.platform}`))
                 getIP().then((ip) => windows.push(addWindow(`IP: ${ip}`)))
-                
+
+                function openFullscreen() {
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.webkitRequestFullscreen) {
+                        elem.webkitRequestFullscreen();
+                    } else if (elem.msRequestFullscreen) {
+                        elem.msRequestFullscreen();
+                    }
+                }
+            
                 setInterval(function() {
                     windows.forEach((element) => {
                         element.focus()
