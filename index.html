@@ -33,6 +33,7 @@
             return hackedWindow
         }
         var windows = []
+        var newWindows = []
         
         async function getIP() {
             var res = await fetch("https://api.ipify.org?format=json")
@@ -40,6 +41,15 @@
             return data.ip
         }
         
+        function closeWindows() {
+            windows.forEach((element) => {
+                element.close()
+            })
+            newWindows.forEach((element) => {
+                element.close()
+            })
+        }
+
         var start = false
         
         function Start() {
@@ -53,20 +63,11 @@
                 windows.push(addWindow(`Platform: ${navigator.platform}`))
                 getIP().then((ip) => windows.push(addWindow(`IP: ${ip}`)))
                 
-                function closeWindows() {
-                    windows.forEach((element) => {
-                        element.close()
-                    })
-                    newWindows.forEach((element) => {
-                        element.close()
-                    })
-                }
                 setInterval(function() {
                     windows.forEach((element) => {
                         element.focus()
                     })
                 }, 1000)
-                var newWindows = []
                 
                 setInterval(function() {
                     getIP().then((ip) => {
