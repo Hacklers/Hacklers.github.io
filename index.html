@@ -1,11 +1,13 @@
 <html>
     <head>
         <title>Hacklers</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>THIS IS A PRANK!!! DO NOT TAKE THIS SERIOUSLY, NO DATA IS DOWNLOADED OR SOLD.</h1>
         <button onclick="Start()">Begin</button>
         <button onclick="location.replace('https://hacklers.github.io/cooked')">Cooked Version</button>
+        <button onclick="closeWindows(); window.close()">Quit</button>
         <script>
         function addWindow(text) {
             var hackedWindow = window.open("", "", "width=400,height=400")
