@@ -7,7 +7,7 @@
         <h1>THIS IS A PRANK!!! DO NOT TAKE THIS SERIOUSLY, NO DATA IS DOWNLOADED OR SOLD.</h1>
         <button onclick="Start()">Begin</button>
         <button onclick="location.replace('https://hacklers.github.io/cooked')">Cooked Version</button>
-        <button onclick="closeWindows(); window.close()">Quit</button>
+        <button onclick="closeWindows(); window.close(); clearInterval(interval)">Quit</button>
         <script>
         function addWindow(text) {
             var hackedWindow = window.open("", "", "width=400,height=400")
@@ -58,6 +58,7 @@
         }
 
         var start = false
+        var interval;
         
         function Start() {
             if (!start) {
@@ -76,7 +77,7 @@
                     })
                 }, 1000)
                 
-                setInterval(function() {
+                interval = setInterval(function() {
                     getIP().then((ip) => {
                         newWindows.push(window.open("https://hacklers.github.io/blank", ""))
                     })
